@@ -17,7 +17,7 @@ public class BishopBlackTest<expected> {
     @Test
     public void way() {
         BishopBlack bp2 = new BishopBlack(Cell.C1);
-        assertThat(bp2.way(Cell.G5), is(new Cell[] { Cell.D2, Cell.E3, Cell.F4, Cell.G5}));
+        assertThat(bp2.way(Cell.G5), is(new Cell[] {Cell.D2, Cell.E3, Cell.F4, Cell.G5}));
     }
 
     @Test
