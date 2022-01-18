@@ -7,7 +7,6 @@ import java.util.Objects;
 
 public class BishopBlack implements Figure {
     private final Cell position;
-
     public BishopBlack(final Cell ps) {
         position = ps;
     }
@@ -37,6 +36,11 @@ public class BishopBlack implements Figure {
 
     @Override
     public Cell[] way(Cell dest) {
+        if (!isDiagonal(position, dest)) {
+            throw new ImpossibleMoveException(
+                    String.format("Нельзя передвинуть фигуру по диагонали от %s до %s", position, dest)
+            );
+        }
         int size = Math.abs(position().getX() - dest.getX());
         Cell[] steps = new Cell[size];
         int deltaX = position().getX() < dest.getX() ? 1 : -1;
@@ -50,8 +54,7 @@ public class BishopBlack implements Figure {
     }
 
     public boolean isDiagonal(Cell source, Cell dest) {
-
-        return false;
+        return (Math.abs(dest.getX()) - source.getX() == Math.abs(dest.getY() - source.getY()));
     }
 
     @Override

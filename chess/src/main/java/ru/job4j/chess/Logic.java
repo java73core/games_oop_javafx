@@ -21,13 +21,15 @@ public final class Logic {
     }
 
     private boolean free(Cell[] steps) throws OccupiedCellException {
-        for (Cell c : steps) {
             for (Figure figure : figures) {
-                if(figure.position().equals(c)) {
-                         throw new OccupiedCellException("Could not way");
+                if (figure != null) {
+                    for (Cell cell : steps) {
+                    if (figure.position() == cell) {
+                        throw new OccupiedCellException("Could not way");
                     }
                 }
             }
+        }
         return true;
     }
 

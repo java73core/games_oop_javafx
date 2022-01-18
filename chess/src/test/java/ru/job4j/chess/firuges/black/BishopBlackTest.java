@@ -10,8 +10,8 @@ public class BishopBlackTest<expected> {
 
     @Test
     public void position() {
-        BishopBlack bishopBlack = new BishopBlack(Cell.C8);
-        assertEquals(bishopBlack.position(),Cell.C8);
+        BishopBlack bishopBlack = new BishopBlack(Cell.D1);
+        assertEquals(bishopBlack.copy(Cell.C7).position(),Cell.C7);
     }
 
     @Test
