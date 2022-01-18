@@ -13,8 +13,12 @@ public class BishopBlack implements Figure {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
         BishopBlack that = (BishopBlack) o;
         return position == that.position;
     }
@@ -38,16 +42,16 @@ public class BishopBlack implements Figure {
     public Cell[] way(Cell dest) {
         if (!isDiagonal(position, dest)) {
             throw new ImpossibleMoveException(
-                    String.format("Нельзя передвинуть фигуру по диагонали от %s до %s", position, dest)
+                    String.format("Нельзя передвинуть по диагонали от %s до %s", position, dest)
             );
         }
         int size = Math.abs(position().getX() - dest.getX());
         Cell[] steps = new Cell[size];
         int deltaX = position().getX() < dest.getX() ? 1 : -1;
-        int deltaY = position().getY() < dest.getX() ? 1 : -1 ;
+        int deltaY = position().getY() < dest.getX() ? 1 : -1;
         for (int index = 0; index < size; index++) {
             int x = (index + 1) * deltaX + position().getX();
-            int y = (index + 1 ) * deltaY + position().getY();
+            int y = (index + 1) * deltaY + position().getY();
             steps[index] = Cell.findBy(x, y);
         }
         return steps;

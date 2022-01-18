@@ -11,17 +11,17 @@ public class BishopBlackTest<expected> {
     @Test
     public void position() {
         BishopBlack bishopBlack = new BishopBlack(Cell.D1);
-        assertEquals(bishopBlack.copy(Cell.C7).position(),Cell.C7);
+        assertEquals(bishopBlack.copy(Cell.C7).position(), Cell.C7);
     }
 
     @Test
     public void way() {
         BishopBlack bp2 = new BishopBlack(Cell.C1);
-        assertThat(bp2.way(Cell.G5), is(new Cell[]{ Cell.D2, Cell.E3, Cell.F4, Cell.G5}));
+        assertThat(bp2.way(Cell.G5), is(new Cell[] { Cell.D2, Cell.E3, Cell.F4, Cell.G5}));
     }
 
     @Test
     public void copy() {
-       assertEquals(new BishopBlack(Cell.B1).copy(Cell.A2),new BishopBlack(Cell.A2));
+       assertEquals(new BishopBlack(Cell.B1).copy(Cell.A2), new BishopBlack(Cell.A2));
     }
 }
