@@ -6,7 +6,7 @@ import ru.job4j.chess.firuges.Cell;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
 
-public class BishopBlackTest<expected> {
+public class BishopBlackTest {
 
     @Test
     public void position() {

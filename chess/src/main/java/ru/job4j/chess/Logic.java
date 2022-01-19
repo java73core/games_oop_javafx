@@ -24,7 +24,7 @@ public final class Logic {
             for (Figure figure : figures) {
                 if (figure != null) {
                     for (Cell cell : steps) {
-                    if (figure.position() == cell) {
+                    if (figure.position().equals(cell)) {
                         throw new OccupiedCellException("Could not way");
                     }
                 }
